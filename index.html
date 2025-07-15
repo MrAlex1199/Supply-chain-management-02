@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คู่มือทบทวน: การจัดการโซ่อุปทาน (SCM)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #58a6ff, #3fb950);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: rgba(22, 27, 34, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border-color: #58a6ff;
+        }
+        .nav-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            color: #8b949e;
+            border-left: 3px solid transparent;
+        }
+        .nav-link:hover {
+            background-color: #161b22;
+            color: #58a6ff;
+        }
+        .nav-link.active {
+            color: #58a6ff;
+            font-weight: 600;
+            background-color: #161b22;
+            border-left-color: #58a6ff;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #21262d;
+            color: #58a6ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid #30363d;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 lg:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-2">
+                บทที่ 2: การจัดการโซ่อุปทาน
+            </h1>
+            <p class="text-xl text-gray-400">(Supply Chain Management)</p>
+            <p class="text-md text-gray-500 mt-2">LS201: นวัตกรรมการจัดการการปฏิบัติการโลจิสติกส์และโซ่อุปทาน | มหาวิทยาลัยธุรกิจบัณฑิตย์</p>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sticky Sidebar Navigation -->
+            <aside class="lg:w-1/4 lg:sticky top-8 self-start">
+                <nav id="sidebar" class="bg-[#161b22] p-4 rounded-lg border border-[#30363d]">
+                    <h3 class="font-bold text-lg mb-4 text-white">หัวข้อในบทนี้</h3>
+                    <a href="#section-1" class="nav-link active">ความหมายและความสำคัญ</a>
+                    <a href="#section-2" class="nav-link">แผนผังและเศรษฐศาสตร์</a>
+                    <a href="#section-3" class="nav-link">Make-or-Buy Decision</a>
+                    <a href="#section-4" class="nav-link">กลยุทธ์ซัพพลายเชน</a>
+                    <a href="#section-5" class="nav-link">การคัดเลือกผู้ขาย</a>
+                    <a href="#section-6" class="nav-link">การจัดการโลจิสติกส์</a>
+                    <a href="#section-7" class="nav-link">เทคโนโลยีในโซ่อุปทาน</a>
+                    <a href="#section-8" class="nav-link">สรุปประเด็นสำคัญ</a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="lg:w-3/4">
+                <section id="section-1" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-circle-info mr-3 text-blue-400"></i>ความหมายและความสำคัญ</h2>
+                    <p class="mb-4"><strong>การจัดการโซ่อุปทาน (SCM)</strong> คือ การบูรณาการกิจกรรมทั้งหมดในโซ่อุปทาน ตั้งแต่การจัดหาวัตถุดิบ, การผลิต, ไปจนถึงการส่งมอบสินค้าถึงมือลูกค้า เพื่อสร้างความได้เปรียบในการแข่งขัน</p>
+                    
+                    <!-- Infographic: 3 Core Flows -->
+                    <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-6">
+                        <h3 class="font-semibold text-lg text-white mb-3 text-center">3 การไหลหลักในโซ่อุปทาน (The 3 Core Flows)</h3>
+                        <div class="flex justify-around items-center text-center">
+                            <div>
+                                <i class="fa-solid fa-box-open text-3xl text-green-400"></i>
+                                <p class="font-bold mt-2">การไหลของสินค้า</p>
+                                <p class="text-xs text-gray-400">(Product Flow)</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-right-long text-xl text-gray-500"></i>
+                            <div>
+                                <i class="fa-solid fa-circle-info text-3xl text-blue-400"></i>
+                                <p class="font-bold mt-2">การไหลของข้อมูล</p>
+                                <p class="text-xs text-gray-400">(Information Flow)</p>
+                            </div>
+                            <i class="fa-solid fa-arrow-left-long text-xl text-gray-500"></i>
+                            <div>
+                                <i class="fa-solid fa-hand-holding-dollar text-3xl text-yellow-400"></i>
+                                <p class="font-bold mt-2">การไหลของการเงิน</p>
+                                <p class="text-xs text-gray-400">(Financial Flow)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-4">
+                        <p class="font-semibold text-lg text-green-400"><i class="fa-solid fa-lightbulb mr-2"></i>ตัวอย่างให้เห็นภาพ: <strong>กาแฟ 1 แก้ว</strong></p>
+                        <ul class="list-disc list-inside mt-2 pl-4 text-gray-300">
+                            <li><strong class="text-white">ต้นน้ำ:</strong> ชาวไร่ปลูกและเก็บเกี่ยวเมล็ดกาแฟ (จัดหา)</li>
+                            <li><strong class="text-white">กลางน้ำ:</strong> โรงงานคั่วและแปรรูปเมล็ดกาแฟ (ผลิต)</li>
+                            <li><strong class="text-white">ปลายน้ำ:</strong> ร้านกาแฟชงและส่งมอบให้คุณ (กระจายสินค้า)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="section-2" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-chart-pie mr-3 text-green-400"></i>แผนผังและเศรษฐศาสตร์ของโซ่อุปทาน</h2>
+                    <p class="mb-4">โซ่อุปทานที่มีประสิทธิภาพคือหัวใจของธุรกิจสมัยใหม่ การลดต้นทุนในโซ่อุปทานเพียงเล็กน้อย สามารถส่งผลกระทบต่อกำไรได้อย่างมหาศาล</p>
+                    
+                    <!-- Supply Chain Flow Diagram -->
+                    <div class="mb-8">
+                        <h3 class="font-semibold text-lg text-white mb-3 text-center">แผนผังระบบโซ่อุปทาน (Supply Chain Flow)</h3>
+                        <div class="flex items-center justify-center flex-wrap gap-y-4">
+                            <div class="text-center p-2"><div class="w-24 h-24 mx-auto bg-sky-900/70 rounded-full flex items-center justify-center border-2 border-sky-500"><i class="fa-solid fa-boxes-packing text-3xl text-sky-300"></i></div><p class="mt-2 font-bold">ผู้จัดหา</p></div>
+                            <div class="text-sky-500 text-2xl p-2 mt-[-30px]"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            <div class="text-center p-2"><div class="w-24 h-24 mx-auto bg-purple-900/70 rounded-full flex items-center justify-center border-2 border-purple-500"><i class="fa-solid fa-industry text-3xl text-purple-300"></i></div><p class="mt-2 font-bold">ผู้ผลิต</p></div>
+                            <div class="text-purple-500 text-2xl p-2 mt-[-30px]"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            <div class="text-center p-2"><div class="w-24 h-24 mx-auto bg-orange-900/70 rounded-full flex items-center justify-center border-2 border-orange-500"><i class="fa-solid fa-truck-ramp-box text-3xl text-orange-300"></i></div><p class="mt-2 font-bold">ผู้กระจายสินค้า</p></div>
+                            <div class="text-orange-500 text-2xl p-2 mt-[-30px]"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            <div class="text-center p-2"><div class="w-24 h-24 mx-auto bg-teal-900/70 rounded-full flex items-center justify-center border-2 border-teal-500"><i class="fa-solid fa-store text-3xl text-teal-300"></i></div><p class="mt-2 font-bold">ผู้ค้าปลีก</p></div>
+                            <div class="text-teal-500 text-2xl p-2 mt-[-30px]"><i class="fa-solid fa-arrow-right-long"></i></div>
+                            <div class="text-center p-2"><div class="w-24 h-24 mx-auto bg-green-900/70 rounded-full flex items-center justify-center border-2 border-green-500"><i class="fa-solid fa-user-large text-3xl text-green-300"></i></div><p class="mt-2 font-bold">ลูกค้า</p></div>
+                        </div>
+                    </div>
+
+                    <!-- Economics Infographic -->
+                    <div class="mb-8">
+                        <h3 class="font-semibold text-lg text-white mb-4 text-center">เศรษฐศาสตร์ของโซ่อุปทาน (Supply Chain Costs)</h3>
+                        <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
+                            <p class="text-center text-gray-300 mb-4">ต้นทุนในโซ่อุปทานประกอบด้วยหลายส่วนสำคัญ การจัดการที่ดีจะช่วยลดค่าใช้จ่ายและเพิ่มกำไร</p>
+                            <div class="w-full bg-gray-700 rounded-full h-8 flex overflow-hidden">
+                                <div class="flex justify-center items-center h-full bg-blue-500" style="width: 40%"><span class="text-xs font-bold">ขนส่ง (40%)</span></div>
+                                <div class="flex justify-center items-center h-full bg-green-500" style="width: 25%"><span class="text-xs font-bold">คลังสินค้า (25%)</span></div>
+                                <div class="flex justify-center items-center h-full bg-yellow-500" style="width: 20%"><span class="text-xs font-bold text-black">สินค้าคงคลัง (20%)</span></div>
+                                <div class="flex justify-center items-center h-full bg-red-500" style="width: 15%"><span class="text-xs font-bold">อื่นๆ (15%)</span></div>
+                            </div>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-sm">
+                                <div><i class="fa-solid fa-circle text-blue-500 mr-2"></i><strong>การขนส่ง:</strong> ค่ารถ, น้ำมัน, คนขับ</div>
+                                <div><i class="fa-solid fa-circle text-green-500 mr-2"></i><strong>คลังสินค้า:</strong> ค่าเช่า, พนักงาน, อุปกรณ์</div>
+                                <div><i class="fa-solid fa-circle text-yellow-500 mr-2"></i><strong>สินค้าคงคลัง:</strong> ต้นทุนจม, ค่าเสียโอกาส</div>
+                                <div><i class="fa-solid fa-circle text-red-500 mr-2"></i><strong>อื่นๆ:</strong> บริหาร, เทคโนโลยี, ภาษี</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div>
+                            <h3 class="font-semibold text-lg text-white mb-2">ภาพรวม (จากไฟล์)</h3>
+                            <img src="01.png" alt="Infographic of Supply Chain" class="rounded-lg border border-[#30363d] shadow-lg">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-white mb-2">สัดส่วนต้นทุน (จากไฟล์)</h3>
+                            <img src="02.jpg" alt="Infographic of Supply Chain Economics" class="rounded-lg border border-[#30363d] shadow-lg">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-3" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-handshake mr-3 text-yellow-400"></i>Make-or-Buy: ตัดสินใจทำเองหรือจ้าง?</h2>
+                    <p class="mb-4">หนึ่งในการตัดสินใจเชิงกลยุทธ์ที่สำคัญที่สุด คือการเลือกว่าจะผลิตสินค้าหรือบริการบางอย่างด้วยตัวเอง (Make) หรือจะจ้างจากบริษัทภายนอก (Buy)</p>
+                    
+                    <!-- Infographic: Scales -->
+                    <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-6">
+                        <h3 class="font-semibold text-lg text-white mb-4 text-center">ตราชั่งการตัดสินใจ</h3>
+                        <div class="flex items-center justify-center">
+                            <div class="w-2/5 text-center">
+                                <h4 class="font-bold text-green-400">ทำเอง (Make)</h4>
+                                <ul class="text-xs text-left list-disc list-inside mt-2 space-y-1">
+                                    <li>ควบคุมคุณภาพ</li>
+                                    <li>รักษาความลับ</li>
+                                    <li>ต้นทุนอาจต่ำกว่า</li>
+                                </ul>
+                            </div>
+                            <div class="w-1/5 flex justify-center text-5xl text-gray-400">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <div class="w-2/5 text-center">
+                                <h4 class="font-bold text-blue-400">ซื้อ/จ้าง (Buy)</h4>
+                                <ul class="text-xs text-left list-disc list-inside mt-2 space-y-1">
+                                    <li>ได้ความเชี่ยวชาญ</li>
+                                    <li>ยืดหยุ่นสูง</li>
+                                    <li>ลดการลงทุน</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                     <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-4">
+                        <p class="font-semibold text-lg text-yellow-400"><i class="fa-solid fa-lightbulb mr-2"></i>ตัวอย่าง: <strong>Apple กับชิปประมวลผล</strong></p>
+                        <p class="mt-2 text-gray-300">ในอดีต Apple เคย <strong class="text-white">ซื้อ (Buy)</strong> ชิปจาก Intel และ Samsung แต่ต่อมาได้เปลี่ยนกลยุทธ์มา <strong class="text-white">ผลิต (Make)</strong> ชิปตระกูล M-series ของตัวเอง เพื่อควบคุมประสิทธิภาพและประสบการณ์ผู้ใช้ได้อย่างสมบูรณ์</p>
+                    </div>
+                </section>
+
+                <section id="section-4" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-sitemap mr-3 text-purple-400"></i>กลยุทธ์ซัพพลายเชน</h2>
+                    <p class="mb-4">การเลือกกลยุทธ์ที่เหมาะสมขึ้นอยู่กับประเภทสินค้า, ตลาด, และเป้าหมายขององค์กร</p>
+                    
+                    <!-- Infographic: Strategy Icons -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center mb-6">
+                        <div class="bg-[#161b22] p-4 rounded-lg border border-[#30363d]">
+                            <i class="fa-solid fa-users text-3xl text-blue-400 mb-2"></i>
+                            <h4 class="font-bold">หลายผู้จัดหา</h4>
+                            <p class="text-xs text-gray-400">เน้นราคา</p>
+                        </div>
+                        <div class="bg-[#161b22] p-4 rounded-lg border border-[#30363d]">
+                            <i class="fa-solid fa-handshake-simple text-3xl text-green-400 mb-2"></i>
+                            <h4 class="font-bold">น้อยราย</h4>
+                            <p class="text-xs text-gray-400">เน้นคุณภาพ</p>
+                        </div>
+                        <div class="bg-[#161b22] p-4 rounded-lg border border-[#30363d]">
+                            <i class="fa-solid fa-building-user text-3xl text-orange-400 mb-2"></i>
+                            <h4 class="font-bold">ควบรวมแนวตั้ง</h4>
+                            <p class="text-xs text-gray-400">เน้นควบคุม</p>
+                        </div>
+                        <div class="bg-[#161b22] p-4 rounded-lg border border-[#30363d]">
+                            <i class="fa-solid fa-cloud text-3xl text-purple-400 mb-2"></i>
+                            <h4 class="font-bold">บริษัทเสมือน</h4>
+                            <p class="text-xs text-gray-400">เน้นยืดหยุ่น</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-[#161b22] text-gray-300">
+                                <tr>
+                                    <th class="p-3">กลยุทธ์</th>
+                                    <th class="p-3">ตัวอย่าง</th>
+                                    <th class="p-3">เหมาะสำหรับ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-[#30363d]">
+                                    <td class="p-3 font-bold text-white">หลายผู้จัดหา (Many Suppliers)</td>
+                                    <td class="p-3">ร้านอาหารตามสั่งซื้อผักจากหลายเจ้าในตลาดสด</td>
+                                    <td class="p-3">สินค้าโภคภัณฑ์, เน้นการแข่งขันด้านราคา</td>
+                                </tr>
+                                <tr class="border-b border-[#30363d]">
+                                    <td class="p-3 font-bold text-white">น้อยราย (Few Suppliers)</td>
+                                    <td class="p-3">Toyota ทำงานกับซัพพลายเออร์คู่บุญอย่าง Denso</td>
+                                    <td class="p-3">สร้างความสัมพันธ์ระยะยาว, เน้นคุณภาพและนวัตกรรม</td>
+                                </tr>
+                                <tr class="border-b border-[#30363d]">
+                                    <td class="p-3 font-bold text-white">ควบรวมแนวตั้ง (Vertical Integration)</td>
+                                    <td class="p-3">7-Eleven (CPALL) มีทั้งฟาร์ม, โรงงานแปรรูป, และร้านค้าปลีก</td>
+                                    <td class="p-3">ต้องการควบคุมทั้งกระบวนการ, ลดความเสี่ยง</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-bold text-white">บริษัทเสมือน (Virtual Company)</td>
+                                    <td class="p-3">แบรนด์เสื้อผ้าออนไลน์ที่จ้างทุกอย่าง (ออกแบบ, ผลิต, ส่ง)</td>
+                                    <td class="p-3">ต้องการความยืดหยุ่นสูง, ลดการลงทุน</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="section-5" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-user-check mr-3 text-teal-400"></i>การคัดเลือกผู้ขาย (Vendor Selection)</h2>
+                    <p class="mb-4">กระบวนการ 3 ขั้นตอนในการหาคู่ค้าที่ดีที่สุด เพื่อสร้างความสัมพันธ์ที่ยั่งยืน</p>
+                    
+                    <!-- Infographic: Funnel -->
+                    <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-6">
+                        <h3 class="font-semibold text-lg text-white mb-4 text-center">กรวยการคัดเลือกผู้ขาย</h3>
+                        <div class="w-full flex flex-col items-center text-center text-white font-bold space-y-2">
+                            <div class="w-full bg-blue-800/80 p-3 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-search mr-3"></i><span>1. การประเมิน (Evaluation)</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-down text-blue-400"></i>
+                            <div class="w-2/3 bg-green-800/80 p-3 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-handshake-angle mr-3"></i><span>2. การพัฒนา (Development)</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-down text-green-400"></i>
+                            <div class="w-1/3 bg-yellow-800/80 p-3 rounded-lg flex items-center justify-center">
+                                <i class="fa-solid fa-file-signature mr-3"></i><span>3. การเจรจา (Negotiation)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-6" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-truck-fast mr-3 text-orange-400"></i>การจัดการโลจิสติกส์ (Logistics Management)</h2>
+                    <p class="mb-4">คือส่วนหนึ่งของ SCM ที่เน้นการเคลื่อนย้ายและจัดเก็บสินค้าให้มีประสิทธิภาพสูงสุด</p>
+                    
+                    <!-- Infographic: Transport Comparison -->
+                    <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-6">
+                        <h3 class="font-semibold text-lg text-white mb-3 text-center">เปรียบเทียบรูปแบบการขนส่ง</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center text-sm">
+                            <div class="bg-[#161b22] p-3 rounded-lg border border-transparent hover:border-blue-400">
+                                <i class="fa-solid fa-truck text-3xl mb-2 text-blue-400"></i>
+                                <p class="font-bold">รถบรรทุก</p>
+                                <p class="text-xs text-gray-400">เร็ว, ยืดหยุ่นสูง</p>
+                            </div>
+                            <div class="bg-[#161b22] p-3 rounded-lg border border-transparent hover:border-gray-400">
+                                <i class="fa-solid fa-train text-3xl mb-2 text-gray-400"></i>
+                                <p class="font-bold">รถไฟ</p>
+                                <p class="text-xs text-gray-400">ต้นทุนต่ำ, ปริมาณมาก</p>
+                            </div>
+                            <div class="bg-[#161b22] p-3 rounded-lg border border-transparent hover:border-purple-400">
+                                <i class="fa-solid fa-plane-up text-3xl mb-2 text-purple-400"></i>
+                                <p class="font-bold">เครื่องบิน</p>
+                                <p class="text-xs text-gray-400">เร็วที่สุด, แพงที่สุด</p>
+                            </div>
+                            <div class="bg-[#161b22] p-3 rounded-lg border border-transparent hover:border-teal-400">
+                                <i class="fa-solid fa-ship text-3xl mb-2 text-teal-400"></i>
+                                <p class="font-bold">เรือ</p>
+                                <p class="text-xs text-gray-400">ถูกที่สุด, ช้าที่สุด</p>
+                            </div>
+                            <div class="bg-[#161b22] p-3 rounded-lg border border-transparent hover:border-cyan-400">
+                                <i class="fa-solid fa-water text-3xl mb-2 text-cyan-400"></i>
+                                <p class="font-bold">ท่อ</p>
+                                <p class="text-xs text-gray-400">เฉพาะทาง, ต่อเนื่อง</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="section-7" class="card">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-microchip mr-3 text-cyan-400"></i>เทคโนโลยีในโซ่อุปทาน</h2>
+                    <p class="mb-4">เทคโนโลยีดิจิทัลกำลังเข้ามาปฏิวัติ SCM ทำให้มีประสิทธิภาพ, โปร่งใส, และตอบสนองได้เร็วยิ่งขึ้น</p>
+                    
+                    <!-- Infographic: Tech Synergy -->
+                    <div class="bg-[#0d1117] p-4 rounded-lg border border-[#30363d] mt-6">
+                        <h3 class="font-semibold text-lg text-white mb-4 text-center">การทำงานร่วมกันของเทคโนโลยี</h3>
+                        <div class="flex items-center justify-around text-center">
+                            <div>
+                                <i class="fa-solid fa-satellite-dish text-3xl text-blue-400"></i>
+                                <p class="font-bold mt-2">IoT</p>
+                                <p class="text-xs text-gray-400">รวบรวมข้อมูล</p>
+                            </div>
+                            <div class="text-2xl text-gray-500"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div>
+                                <i class="fa-solid fa-brain text-3xl text-green-400"></i>
+                                <p class="font-bold mt-2">AI</p>
+                                <p class="text-xs text-gray-400">วิเคราะห์/ตัดสินใจ</p>
+                            </div>
+                            <div class="text-2xl text-gray-500"><i class="fa-solid fa-arrow-right"></i></div>
+                            <div>
+                                <i class="fa-solid fa-link text-3xl text-purple-400"></i>
+                                <p class="font-bold mt-2">Blockchain</p>
+                                <p class="text-xs text-gray-400">บันทึก/ตรวจสอบ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 mt-6">
+                        <div class="p-4 rounded-lg bg-gray-800/50">
+                            <h3 class="font-bold text-lg text-cyan-300">🤖 ปัญญาประดิษฐ์ (AI)</h3>
+                            <p class="text-sm">ช่วยพยากรณ์ความต้องการของลูกค้า, วางแผนเส้นทางขนส่งที่เร็วที่สุด, และจัดการสินค้าคงคลังอัตโนมัติ (เช่น: Grab ใช้ AI คำนวณเวลาและเส้นทางส่งอาหาร)</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-800/50">
+                            <h3 class="font-bold text-lg text-cyan-300">📡 Internet of Things (IoT)</h3>
+                            <p class="text-sm">เซ็นเซอร์ที่ติดบนตู้คอนเทนเนอร์หรือรถบรรทุก ช่วยให้ติดตามสถานะสินค้าได้แบบเรียลไทม์ ทั้งตำแหน่งและอุณหภูมิ (เช่น: การขนส่งวัคซีนที่ต้องควบคุมอุณหภูมิ)</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-gray-800/50">
+                            <h3 class="font-bold text-lg text-cyan-300">🔗 บล็อกเชน (Blockchain)</h3>
+                            <p class="text-sm">สร้างบัญชีธุรกรรมที่ไม่สามารถแก้ไขได้ ทำให้ตรวจสอบย้อนกลับที่มาของสินค้าได้อย่างโปร่งใส ตั้งแต่ฟาร์มจนถึงมือผู้บริโภค (เช่น: การตรวจสอบที่มาของกาแฟออร์แกนิก)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-8" class="card bg-gradient-to-br from-blue-900/50 to-green-900/50">
+                    <h2 class="text-2xl font-bold text-white mb-4"><i class="fa-solid fa-star mr-3 text-yellow-300"></i>สรุปประเด็นสำคัญก่อนสอบ</h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><i class="fa-solid fa-check-double text-green-400 mt-1 mr-3"></i><span><strong>หัวใจของ SCM</strong> คือการจัดการ "การไหล" (Flow) 3 อย่าง: การไหลของสินค้า, ข้อมูล, และการเงิน</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-double text-green-400 mt-1 mr-3"></i><span><strong>เป้าหมายหลัก</strong> คือการสร้างสมดุลระหว่าง <span class="tag">ต้นทุน</span> <span class="tag">ความเร็ว</span> และ <span class="tag">คุณภาพ</span> เพื่อตอบสนองลูกค้าให้ดีที่สุด</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-double text-green-400 mt-1 mr-3"></i><span><strong>Make-or-Buy</strong> เป็นการตัดสินใจเชิงกลยุทธ์ที่สำคัญ ว่าจะลงทุนทำเอง หรือพึ่งพาความเชี่ยวชาญจากภายนอก</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-double text-green-400 mt-1 mr-3"></i><span><strong>โลจิสติกส์</strong> คือ "แขนขา" ของโซ่อุปทาน ทำหน้าที่เคลื่อนย้ายและจัดเก็บสินค้า</span></li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-double text-green-400 mt-1 mr-3"></i><span><strong>เทคโนโลยี</strong> อย่าง AI, IoT, Blockchain ไม่ใช่เรื่องไกลตัว แต่เป็นเครื่องมือสำคัญที่ช่วยเพิ่มความสามารถในการแข่งขัน</span></li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
